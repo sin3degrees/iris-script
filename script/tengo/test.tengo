@@ -1,0 +1,42 @@
+fmt.Println("测试tengo脚本")
+outData = {
+    code: 1,
+    msg: "SUCCESS",
+    data: []
+}
+
+get_aql_list := func() {
+    sql := "select * from qc_aql"
+    result := orm.Query(sql)
+    if (!result["flag"]) {
+        outData.code = -1
+        outData.msg = result["err"]
+    } else {
+        outData.data = result["data"]
+    }
+}
+
+get_aql_level_list := func() {
+    sql := `select * from qc_aql_level where f_qc_aql_level_id < ?`
+    result := orm.Query(sql, 3)
+    if (!result["flag"]) {
+        outData.code = -1
+        outData.msg = result["err"]
+    } else {
+        outData.data = result["data"]
+    }
+}
+
+process := func(){
+    cmd := inData["cmd"]
+    if cmd == "get_aql_list" {
+        get_aql_list()
+    } else if cmd == "get_aql_level_list" {
+       get_aql_level_list()
+    } else {
+       outData["code"] = -1
+       outData["msg"] = "接口不存在"
+    }
+}
+
+process()

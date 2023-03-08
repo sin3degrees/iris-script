@@ -1,0 +1,37 @@
+{
+    "Common": {
+        "AuthCheck": false,
+        "Port": "8848"
+    },
+    "DB": {
+        "Type": "mysql",
+        "UserName": "root",
+        "Password": "1234",
+        "Ip": "127.0.0.1",
+        "Port": "3306",
+        "DBName": "finance",
+        "MaxLife": 1,
+        "MaxIdle": 20,
+        "MaxOpen": 2000
+    },
+    "Js": {
+        "Path": "script/js/",
+        "PoolSize": 10
+    },
+    "Lua": {
+        "Path": "script/lua/",
+        "PoolSize": 10,
+        "CallStackSize": 4096,
+        "RegistrySize": 4096
+    },
+    "Python": {
+        "Path": "script/python/"
+    },
+    "Ruby": {
+        "Path": "script/ruby/"
+    },
+    "Tengo": {
+        "Path": "script/tengo/",
+        "PoolSize": 10
+    }
+}
