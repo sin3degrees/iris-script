@@ -1,0 +1,9 @@
+{
+    "Lua.diagnostics.globals": [
+        "outData",
+        "inData"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
+}
